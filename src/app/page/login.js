@@ -4,9 +4,9 @@ import { CssBaseline, Container } from '@mui/material';
 
 export default function Home() {
   return (
-    <>
-      <CssBaseline />
-      <Container component="main" maxWidth="xs">
+    <div className={styles.container}>
+      <main className={styles.main}>
+        <h1 className={styles.title}>Login Page</h1>
         <LoginForm />
       </Container>
     </>
