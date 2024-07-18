@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function dashboardpage() {
+export default function Dews() {
   return (
     <div>dashboardpage</div>
   )
