@@ -1,39 +1,37 @@
-import React from 'react';
-import { Drawer, List, ListItem, ListItemText, ListItemIcon } from '@mui/material';
-import { Home, Info, ContactMail } from '@mui/icons-material';
+// components/Sidebar.js
+import * as React from 'react';
+import { Drawer, List, ListItem, ListItemIcon, ListItemText, Toolbar, Typography, Box } from '@mui/material';
+import InboxIcon from '@mui/icons-material/Inbox';
+import MailIcon from '@mui/icons-material/Mail';
 
-export default function Sidebar() {
+const drawerWidth = 240;
+
+const Sidebar = () => {
   return (
     <Drawer
       variant="permanent"
-      anchor="left"
       sx={{
-        '& .MuiDrawer-paper': {
-          backgroundColor: '#000', // สีดำ
-          color: '#fff', // สีตัวอักษรขาว
-        },
+        width: drawerWidth,
+        flexShrink: 0,
+        [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
       }}
     >
-      <List>
-        <ListItem button>
-          <ListItemIcon sx={{ color: '#fff' }}>
-            <Home />
-          </ListItemIcon>
-          <ListItemText primary="Home" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon sx={{ color: '#fff' }}>
-            <Info />
-          </ListItemIcon>
-          <ListItemText primary="About" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon sx={{ color: '#fff' }}>
-            <ContactMail />
-          </ListItemIcon>
-          <ListItemText primary="Contact" />
-        </ListItem>
-      </List>
+      <Toolbar>
+      </Toolbar>
+      <Box sx={{ overflow: 'auto' }}>
+        <List>
+          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+      </Box>
     </Drawer>
   );
-}
+};
+
+export default Sidebar;
