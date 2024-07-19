@@ -21,7 +21,7 @@ import BarChartIcon from '@mui/icons-material/BarChart';
 
 const DashboardPage = () => {
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex' ,color: 'primary.main' }}>
 
       <Box
         component="main"
@@ -45,6 +45,11 @@ const DashboardPage = () => {
             <Grid item xs={12} md={4} lg={3}>
               <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                 A SECOND PLANE HAS HIT THE TOWER!!
+              </Paper>
+            </Grid>
+            <Grid  item xs={12} md={4} lg={5}>
+              <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                fuck
               </Paper>
             </Grid>
           </Grid>
